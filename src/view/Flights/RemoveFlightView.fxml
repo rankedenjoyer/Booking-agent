@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox fx:controller="controller.Flights.ModifyFlightsController" alignment="CENTER" styleClass="background" prefHeight="420.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
+    <ImageView fitWidth="600" fitHeight="200">
+        <image>
+            <Image url="/image/flight.png" />
+        </image>
+    </ImageView>
+    <Separator/>
+    <Label text="Remove a flight" styleClass="heading"/>
+    <Separator/>
+    <HBox alignment="CENTER">
+        <Label text="Takeoff:"/>
+        <TextField fx:id="takeoff"/>
+    </HBox>
+    <HBox alignment="CENTER">
+        <Label text="Landing:"/>
+        <TextField fx:id="landing"/>
+    </HBox>
+    <HBox>
+        <Button text="Remove Flight" onAction="#handleRemoveFlight" prefWidth="300" fx:id="removeBtn"/>
+        <Button text="Close" onAction="#handleExit" prefWidth="300"/>
+    </HBox>
+    <stylesheets>
+        <URL value="@/view/style.css" />
+    </stylesheets>
+</VBox>

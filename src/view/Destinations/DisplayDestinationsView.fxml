@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.fxml.FXML?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<VBox fx:controller="controller.Destinations.DisplayDestinationsController" alignment="CENTER" styleClass="background" prefHeight="700.0" prefWidth="600.0" spacing="20" xmlns:fx="http://javafx.com/fxml/1">
+    <ImageView fitWidth="600" fitHeight="150">
+        <image>
+            <Image url="/image/destination.png" />
+        </image>
+    </ImageView>
+    <Separator/>
+    <Label text="Destinations" styleClass="heading"/>
+    <Separator/>
+    <TableView fx:id="tv" items="${controller.allDestinations}">
+        <placeholder>
+            <Label text="Wait a bit"/>
+        </placeholder>
+        <columns>
+            <TableColumn  text="Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Country">
+                <cellValueFactory>
+                    <PropertyValueFactory property="country"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+        <columnResizePolicy>
+        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+    </columnResizePolicy>
+    </TableView>
+    <Separator/>
+    <HBox>
+        <Button onAction="#handleExit" text="Close" prefWidth="600"/>
+    </HBox>
+    <stylesheets>
+        <URL value="@/view/style.css" />
+    </stylesheets>
+</VBox>
